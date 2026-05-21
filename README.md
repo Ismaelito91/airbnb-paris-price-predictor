@@ -1,66 +1,58 @@
 # Airbnb Paris — Prédiction du prix par nuitée
 
-## Contexte
+Modèle ML pour prédire le prix optimal d'une nuitée Airbnb à Paris.
 
-Modèle de Machine Learning pour prédire le prix optimal d'une nuitée Airbnb à Paris, à partir des caractéristiques du logement (quartier, type, capacité, équipements, avis, etc.).
-
-**Dataset** : [Inside Airbnb — Paris](https://insideairbnb.com/get-the-data/) (~70 000 logements, ~75 colonnes)
-
-## Structure du projet
+## Structure
 
 ```
 airbnb-paris-price-predictor/
-├── data/
-│   ├── raw/                # Données brutes (listings.csv) — NON versionné
-│   └── processed/          # Données nettoyées
+├── data/               # listings.csv ici (gitignored)
 ├── notebooks/
-│   └── 01_exploration_and_modeling.ipynb
-├── src/
-│   ├── __init__.py
-│   ├── data_processing.py  # Fonctions de nettoyage et parsing
-│   └── modeling.py         # Pipelines et entraînement
-├── .gitignore
+│   ├── eda.ipynb       # Personne C — exploration
+│   └── airbnb.ipynb    # Personne A+B — notebook principal à rendre
+├── model.joblib        # généré à la fin (gitignored pendant le dev)
+├── metrics.json        # métriques du meilleur modèle
+├── README.md
+├── decisions.md        # log des choix techniques
 ├── requirements.txt
-└── README.md
+└── .gitignore
 ```
 
-## Installation
+## Setup
 
 ```bash
-# 1. Cloner le repo
-git clone https://github.com/<votre-org>/airbnb-paris-price-predictor.git
+git clone <url-du-repo>
 cd airbnb-paris-price-predictor
-
-# 2. Créer un environnement virtuel
-python -m venv venv
-source venv/bin/activate        # Linux/Mac
-# venv\Scripts\activate         # Windows
-
-# 3. Installer les dépendances
-pip install -r requirements.txt
+uv venv
+uv pip install -r requirements.txt
 ```
 
 ## Données
 
 1. Aller sur https://insideairbnb.com/get-the-data/
 2. Section **Paris, France** → télécharger `listings.csv.gz` (version détaillée, ~75 colonnes)
-3. Décompresser et placer le fichier dans `data/raw/listings.csv`
+3. Décompresser et placer dans `data/listings.csv`
 
-> ⚠️ Ne pas prendre la version résumée (~16 colonnes). Prendre la version **détaillée**.
+> ⚠️ Prendre la version **détaillée** (pas le résumé à 16 colonnes).
 
-## Approche technique
+## Branches
 
-- **Cible** : `price` (parsé depuis string `"$120.00"` → float)
-- **Features** : numériques + catégorielles + amenities (booléens)
-- **Transformation** : `TransformedTargetRegressor` avec `log1p` / `expm1`
-- **Pipeline** : `ColumnTransformer` (StandardScaler + OneHotEncoder)
-- **Modèles comparés** : LinearRegression, Ridge, RandomForest, GradientBoosting
-- **Évaluation** : Cross-validation 5-fold (R² et MAE, mean ± std)
+```
+main          → stable, ce qu'on rend
+dev           → branche de travail commune
+feat/pipeline → Personne A
+feat/models   → Personne B
+feat/eda      → Personne C
+```
+
+## Workflow
+
+1. Chacun travaille sur sa branche `feat/*`
+2. Merge dans `dev` au fur et à mesure
+3. Merge `dev` → `main` avant le rendu
 
 ## Équipe
 
-- À compléter
-
-## Licence
-
-Projet académique — YNOV
+- Personne A : pipeline & preprocessing
+- Personne B : modélisation & évaluation
+- Personne C : EDA & visualisations

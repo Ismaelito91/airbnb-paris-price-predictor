@@ -1,0 +1,7 @@
+{
+  "best_model": null,
+  "cv_r2_mean": null,
+  "cv_r2_std": null,
+  "cv_mae_mean": null,
+  "cv_mae_std": null
+}
