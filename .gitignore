@@ -1,0 +1,37 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# === Environnement virtuel ===
+venv/
+env/
+.venv/
+
+# === Jupyter Notebook ===
+.ipynb_checkpoints/
+
+# === Données (trop volumineuses pour Git) ===
+data/raw/
+data/processed/
+*.csv
+*.csv.gz
+
+# === IDE ===
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# === OS ===
+.DS_Store
+Thumbs.db
+
+# === Modèles sauvegardés ===
+models/*.pkl
+models/*.joblib
