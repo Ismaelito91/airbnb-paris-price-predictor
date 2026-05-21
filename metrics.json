@@ -1,7 +1,59 @@
 {
-  "best_model": null,
-  "cv_r2_mean": null,
-  "cv_r2_std": null,
-  "cv_mae_mean": null,
-  "cv_mae_std": null
+  "best_model": "GradientBoosting",
+  "model_selection_basis": "highest mean CV R²",
+  "metric_main": {
+    "name": "MAE",
+    "value": 77.41,
+    "unit": "€",
+    "split": "test"
+  },
+  "metric_secondary": {
+    "name": "R²",
+    "value": 0.4089,
+    "split": "test"
+  },
+  "cv_results_best_model": {
+    "r2_mean": 0.4057,
+    "r2_std": 0.0056,
+    "mae_mean": 77.33,
+    "mae_std": 1.18
+  },
+  "cv_results_all_models": {
+    "LinearRegression": {
+      "r2_mean": -69445.4245,
+      "r2_std": 138884.8931,
+      "mae_mean": 268.64,
+      "mae_std": 370.07
+    },
+    "Ridge": {
+      "r2_mean": -68806.8943,
+      "r2_std": 137607.8948,
+      "mae_mean": 267.75,
+      "mae_std": 368.35
+    },
+    "RandomForest": {
+      "r2_mean": 0.394,
+      "r2_std": 0.0046,
+      "mae_mean": 79.28,
+      "mae_std": 0.93
+    },
+    "GradientBoosting": {
+      "r2_mean": 0.4057,
+      "r2_std": 0.0056,
+      "mae_mean": 77.33,
+      "mae_std": 1.18
+    }
+  },
+  "holdout_test": {
+    "r2": 0.4089,
+    "mae": 77.41,
+    "median_abs_error": 45.32,
+    "p90_abs_error": 167.78,
+    "underestimation_rate": 0.4594,
+    "overestimation_rate": 0.5406
+  },
+  "n_samples": 52532,
+  "n_features": 14,
+  "test_size": 0.2,
+  "random_state": 42
 }
