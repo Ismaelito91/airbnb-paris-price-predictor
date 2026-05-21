@@ -12,7 +12,7 @@ Historique des choix techniques et justifications pour la soutenance.
 | `bedrooms` | num | Plus de chambres = plus cher |
 | `beds` | num | Proxy de la taille du logement |
 | `bathrooms` | num | Indicateur de standing |
-| `neighbourhood_cleansed` | cat | Arrondissement = facteur prix #1 à Paris |
+| `neighbourhood_cleansed` | cat | Quartier parisien = facteur prix #1 (EDA : top quartiers +30–50 % vs médiane globale) |
 | `room_type` | cat | Appart entier vs chambre privée = écart de prix majeur |
 | `property_type` | cat | Loft vs studio → pricing différent |
 | amenities (7 booléens) | bin | Wifi, TV, Ascenseur, etc. → confort perçu |
