@@ -3,4 +3,3 @@ __pycache__/
 *.joblib
 .ipynb_checkpoints/
 .DS_Store
-data/listings.csv
