@@ -8,13 +8,12 @@ Modèle ML pour prédire le prix optimal d'une nuitée Airbnb à Paris.
 airbnb-paris-price-predictor/
 ├── data/               # listings.csv ici (gitignored)
 ├── notebooks/
-│   ├── eda.ipynb       # Personne C — exploration
-│   └── airbnb.ipynb    # Personne A+B — notebook principal à rendre
+│   └── airbnb.ipynb    # Notebook unique (EDA + pipeline + modèles)
 ├── model.joblib        # généré à la fin (gitignored pendant le dev)
 ├── metrics.json        # métriques du meilleur modèle
 ├── README.md
 ├── decisions.md        # log des choix techniques
-├── requirements.txt
+├── pyproject.toml
 └── .gitignore
 ```
 
