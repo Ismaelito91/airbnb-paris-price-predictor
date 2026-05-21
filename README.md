@@ -23,8 +23,9 @@ airbnb-paris-price-predictor/
 ```bash
 git clone <url-du-repo>
 cd airbnb-paris-price-predictor
-uv venv
-uv pip install -r requirements.txt
+uv venv -p 3.11 .venv
+uv sync
+uv run jupyter notebook
 ```
 
 ## Données
