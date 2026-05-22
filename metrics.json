@@ -32,10 +32,10 @@
       "mae_std": 368.35
     },
     "RandomForest": {
-      "r2_mean": 0.394,
-      "r2_std": 0.0046,
+      "r2_mean": 0.3939,
+      "r2_std": 0.0047,
       "mae_mean": 79.28,
-      "mae_std": 0.93
+      "mae_std": 0.92
     },
     "GradientBoosting": {
       "r2_mean": 0.4057,
